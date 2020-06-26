@@ -5,10 +5,6 @@ const animalRouter = express.Router();
 
 app.use(express.json());
 
-//req.params = {name:'angela'}
-//req.query = {name:'angela'}
-//req.body = {name:'angela'}
-
 peopleRouter.get('/hello/:name', (req, res) => {
   console.log(req.params);
   res.send('Hello from people router');
