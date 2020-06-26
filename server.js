@@ -3,12 +3,25 @@ const app = express();
 const peopleRouter = express.Router();
 const animalRouter = express.Router();
 
-peopleRouter.get('/hello', (req, res) => {
+app.use(express.json());
+
+//req.params = {name:'angela'}
+//req.query = {name:'angela'}
+//req.body = {name:'angela'}
+
+peopleRouter.get('/hello/:name', (req, res) => {
+  console.log(req.params);
   res.send('Hello from people router');
 });
 
 animalRouter.get('/', (req, res) => {
+  console.log(req.query);
   res.send('Hello from animal router');
+});
+
+animalRouter.post('/', (req, res) => {
+  console.log(req.body);
+  res.send('Body');
 });
 
 app.use('/people', peopleRouter);
