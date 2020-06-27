@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const peopleRouter = require('./src/routes/peoples');
-const animalRouter = require('./src/routes/animals');
+const peopleRouter = require('./src/peoples/routes');
+const animalRouter = require('./src/animals/routes');
 
 app.use(express.json());
 
