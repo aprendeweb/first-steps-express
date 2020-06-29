@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const peopleRouter = require('./src/peoples/routes');
-const animalRouter = require('./src/animals/routes');
+const { port } = require('./config');
 
 const errorHandler = (error, req, res, next) => {
   console.log(error.message);
@@ -11,10 +11,9 @@ const errorHandler = (error, req, res, next) => {
 app.use(express.json());
 
 app.use('/people', peopleRouter);
-app.use('/animal', animalRouter);
 
 app.use(errorHandler);
 
-app.listen(process.env.PORT, () => {
-  console.log('Server listen on port', process.env.PORT);
+app.listen(port, () => {
+  console.log('Server listen on port', port);
 });

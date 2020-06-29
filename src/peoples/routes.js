@@ -1,7 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { responseHelloRoute } = require('./controller');
+const {
+  getAllPeoples,
+  createPoeple,
+  deletePoeple,
+  updatePoeple,
+} = require('./controller');
 
-router.get('/hello/:name', responseHelloRoute);
+router.get('/', getAllPeoples);
+router.post('/', createPoeple);
+router.delete('/:code', deletePoeple);
+router.put('/:code', updatePoeple);
 
 module.exports = router;
