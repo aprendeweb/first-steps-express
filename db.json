@@ -1,7 +1,1 @@
-{
-  "peoples": [
-    { "code": 1, "name": "Vanessa", "age": 28 },
-    { "code": 2, "name": "Juan", "age": 28 },
-    { "code": 3, "name": "Maria Jose", "age": 33 }
-  ]
-}
+{"peoples":[{"code":1,"name":"Vanessa","age":28},{"code":2,"name":"Juan","age":28},{"code":3,"name":"Maria Fer","age":34},{"code":4,"name":"Angela","age":19}]}

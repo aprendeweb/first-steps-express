@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const { createPoepleSchema, updatePeopleSchema } = require('./schemas');
+const validateInformation = require('./middleware');
 const {
   getAllPeoples,
   createPoeple,
@@ -8,8 +10,8 @@ const {
 } = require('./controller');
 
 router.get('/', getAllPeoples);
-router.post('/', createPoeple);
+router.post('/', validateInformation(createPoepleSchema), createPoeple);
 router.delete('/:code', deletePoeple);
-router.put('/:code', updatePoeple);
+router.put('/:code', validateInformation(updatePeopleSchema), updatePoeple);
 
 module.exports = router;

@@ -9,10 +9,6 @@ module.exports = {
   },
   createPoeple: (req, res) => {
     const { code, name, age } = req.body;
-    if (!code || !name || !age)
-      return res.send(
-        'The code, name and age are required to create a new people here'
-      );
     const data = JSON.parse(fs.readFileSync(dbFilePath));
     const { peoples } = data;
     peoples.push({ code, name, age });
@@ -33,9 +29,6 @@ module.exports = {
   updatePoeple: (req, res) => {
     const { code } = req.params;
     const { name, age } = req.body;
-    if (!name || !age)
-      return res.send('The name and age are required to update the people');
-
     const data = JSON.parse(fs.readFileSync(dbFilePath));
     const { peoples } = data;
     for (const people of peoples) {
