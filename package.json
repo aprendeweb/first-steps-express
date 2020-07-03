@@ -21,6 +21,10 @@
     "@hapi/joi": "^17.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^3.23.3",
     "prettier": "^2.0.5"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
   }
 }
